@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import VistaCombate from '@/views/VistaCombate.vue'
 import VistaPersonajes from '@/views/VistaPersonajes.vue'
 import VistaEscenarios from '@/views/VistaEscenarios.vue'

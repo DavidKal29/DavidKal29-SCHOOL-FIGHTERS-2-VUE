@@ -21,13 +21,19 @@
 
 <script>
 import { personajes } from '../db/datos.js'
+import { useToast } from "vue-toastification";
 export default {
     name:'VistaPersonajes',
+    setup() {
+      const toast = useToast();
+      return { toast }
+    },
     data(){
         return{
             personas:'',
             p1:'',
-            p2:''
+            p2:'',
+            pusheado:false
         }
     },
     methods:{
@@ -42,16 +48,37 @@ export default {
             this.p1=this.personas.find(p=>p.nombre===this.p1)
             this.p2=this.personas.find(p=>p.nombre===this.p2)
 
-            localStorage.setItem('p1',JSON.stringify(this.p1))
-            localStorage.setItem('p2',JSON.stringify(this.p2))
+            
 
-            this.$router.push('/escenarios')
+            if (!this.p1 || !this.p2) {
+                this.toast.error("Rellena ambos campos porfa")
+            }else{
+                localStorage.setItem('p1',JSON.stringify(this.p1))
+                localStorage.setItem('p2',JSON.stringify(this.p2))
+                this.pusheado=true
+
+
+                this.$router.push('/escenarios')
+            }
+
+            
+        }
+    },
+    watch:{
+        p1(nuevoValor){
+            if (nuevoValor && !this.pusheado) {
+                this.toast.success(`${nuevoValor} seleccionado con éxito`)
+            }
+        },
+        p2(nuevoValor){
+            if (nuevoValor && !this.pusheado) {
+                this.toast.success(`${nuevoValor} seleccionado con éxito`)
+            }
         }
     },
     mounted(){
         this.getLocalSotragePersonajes()
         this.personas=this.personas.sort((a, b)=>a.nombre.localeCompare(b.nombre))
-        
     }
 }
 </script>

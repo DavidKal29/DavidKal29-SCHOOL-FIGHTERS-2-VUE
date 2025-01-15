@@ -20,12 +20,18 @@
 
 <script>
 import { escenarios } from '../db/datos.js';
+import { useToast } from "vue-toastification";
 export default {
     name:'VistaEscenarios',
+    setup() {
+      const toast = useToast();
+      return { toast }
+    },
     data(){
       return {
         escenas:'',
-        escenario:''
+        escenario:'',
+        pusheado:false
       }
     },
     methods:{
@@ -39,13 +45,26 @@ export default {
       guardarEscenario(){
         this.escenario=this.escenas.find(e=>e.nombre===this.escenario)
 
-        localStorage.setItem('escenario',JSON.stringify(this.escenario))
+        if (!this.escenario) {
+          this.toast.error("Rellena el campo porfa")
+        }else{
+          this.pusheado=true
 
-        this.$router.push('/combate')
+          localStorage.setItem('escenario',JSON.stringify(this.escenario))
+
+          this.$router.push('/combate')
+        }
       },
       volver(){
         this.$router.push('/')
       }
+    },
+    watch:{
+        escenario(nuevoValor){
+            if (nuevoValor && !this.pusheado) {
+                this.toast.success(`Escenario ${nuevoValor} seleccionado con éxito`)
+            }
+        }
     },
     mounted(){
       this.getLocalSotrageEscenarios()

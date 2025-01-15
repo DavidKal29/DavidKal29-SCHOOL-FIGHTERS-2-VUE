@@ -32,8 +32,7 @@ export default {
         return{
             personas:'',
             p1:'',
-            p2:'',
-            pusheado:false
+            p2:''
         }
     },
     methods:{
@@ -55,7 +54,6 @@ export default {
             }else{
                 localStorage.setItem('p1',JSON.stringify(this.p1))
                 localStorage.setItem('p2',JSON.stringify(this.p2))
-                this.pusheado=true
 
 
                 this.$router.push('/escenarios')
@@ -66,12 +64,12 @@ export default {
     },
     watch:{
         p1(nuevoValor){
-            if (nuevoValor && !this.pusheado) {
+            if (nuevoValor && nuevoValor.length>3) {
                 this.toast.success(`${nuevoValor} seleccionado con éxito`)
             }
         },
         p2(nuevoValor){
-            if (nuevoValor && !this.pusheado) {
+            if (nuevoValor && nuevoValor.length>3) {
                 this.toast.success(`${nuevoValor} seleccionado con éxito`)
             }
         }

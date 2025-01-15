@@ -30,8 +30,7 @@ export default {
     data(){
       return {
         escenas:'',
-        escenario:'',
-        pusheado:false
+        escenario:''
       }
     },
     methods:{
@@ -48,7 +47,6 @@ export default {
         if (!this.escenario) {
           this.toast.error("Rellena el campo porfa")
         }else{
-          this.pusheado=true
 
           localStorage.setItem('escenario',JSON.stringify(this.escenario))
 
@@ -61,7 +59,7 @@ export default {
     },
     watch:{
         escenario(nuevoValor){
-            if (nuevoValor && !this.pusheado) {
+            if (nuevoValor && nuevoValor.length>3) {
                 this.toast.success(`Escenario ${nuevoValor} seleccionado con éxito`)
             }
         }

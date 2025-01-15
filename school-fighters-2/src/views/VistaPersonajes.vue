@@ -15,7 +15,7 @@
             <option v-for="(persona,index) in personas" :key="index" :value="persona.nombre">{{ persona.nombre }}</option>
         </select>
     </div>
-    <router-link to="/escenarios"><button class=" text-[20px] py-[8px] bg-[#3DBC1E] rounded-[7px] px-[12vh] font-bold" @click="guardarPersonajes">Continuar</button></router-link>
+    <button class=" text-[20px] py-[8px] bg-[#3DBC1E] rounded-[7px] px-[12vh] font-bold" @click="guardarPersonajes">Continuar</button>
   </section>
 </template>
 
@@ -44,10 +44,14 @@ export default {
 
             localStorage.setItem('p1',JSON.stringify(this.p1))
             localStorage.setItem('p2',JSON.stringify(this.p2))
+
+            this.$router.push('/escenarios')
         }
     },
     mounted(){
         this.getLocalSotragePersonajes()
+        this.personas=this.personas.sort((a, b)=>a.nombre.localeCompare(b.nombre))
+        
     }
 }
 </script>

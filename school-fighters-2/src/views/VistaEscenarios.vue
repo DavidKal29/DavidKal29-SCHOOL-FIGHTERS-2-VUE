@@ -12,8 +12,8 @@
           </select>
       </div>
       <div class="flex justify-center items-center gap-[30px]">
-        <router-link to="/"><button class=" text-[20px] py-[8px] bg-[#BC1E1E] rounded-[7px] px-[16vh] font-bold">Volver</button></router-link>
-        <router-link to="/combate"><button class=" text-[20px] py-[8px] bg-[#6F1E72] rounded-[7px] px-[12vh] font-bold" @click="guardarEscenario">Continuar</button></router-link>
+        <button class=" text-[20px] py-[8px] bg-[#BC1E1E] rounded-[7px] px-[16vh] font-bold" @click="volver">Volver</button>
+        <button class=" text-[20px] py-[8px] bg-[#6F1E72] rounded-[7px] px-[12vh] font-bold" @click="guardarEscenario">Continuar</button>
       </div>
     </section>
   </template>
@@ -40,6 +40,11 @@ export default {
         this.escenario=this.escenas.find(e=>e.nombre===this.escenario)
 
         localStorage.setItem('escenario',JSON.stringify(this.escenario))
+
+        this.$router.push('/combate')
+      },
+      volver(){
+        this.$router.push('/')
       }
     },
     mounted(){

@@ -49,6 +49,8 @@ export default {
     },
     mounted(){
       this.getLocalSotrageEscenarios()
+      this.escenas=this.escenas.sort((a, b)=>a.nombre.localeCompare(b.nombre))
+
     }
 }
 </script>

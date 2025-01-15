@@ -2,23 +2,17 @@
   <section :style="{ backgroundImage: `url('${this.escenario.imagen}')` }" class="h-screen bg-cover">
     <button @click="inicio" class="bg-[#194988] text-white rounded-[7px] py-[5px] px-[30px] m-[10px]">Inicio</button>
     <div class="flex justify-center items-center gap-[15px] h-[80vh]">
-      
-
       <TarjetaPersonaje :imagen="p1.imagen" :nombre="p1.nombre"></TarjetaPersonaje>
       
       <img class="w-[20%]" src="https://cdn.pixabay.com/photo/2024/08/26/04/20/ai-generated-8998102_640.png" alt="">
 
       <TarjetaPersonaje :imagen="p2.imagen" :nombre="p2.nombre"></TarjetaPersonaje>
-
-      
-      
-      
     </div>
   </section>
 </template>
 
 <script>
-import TarjetaPersonaje from '@/components/TarjetaPersonaje.vue';
+import TarjetaPersonaje from '@/components/TarjetaPersonaje.vue'
 export default {
   components: { TarjetaPersonaje },
     name:'VistaCombate',

@@ -9,8 +9,8 @@ export let escenarios=[
 
 export let personajes=[
     {nombre:'Trollface',imagen:'https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/42WBY2CO2ZJ5DPS33M2GBK5UGQ.jpg'},
-    {nombre:'Oso',imagen:'https://plus.unsplash.com/premium_photo-1664303216226-46ed2b6f1c3b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b3NvJTIwZ3JhY2lvc298ZW58MHx8MHx8fDA%3D'},
-    {nombre:'Cj',imagen:'https://ih1.redbubble.net/image.3104231837.8931/raf,360x360,075,t,fafafa:ca443f4786.jpg'},
+    {nombre:'Osezno',imagen:'https://plus.unsplash.com/premium_photo-1664303216226-46ed2b6f1c3b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b3NvJTIwZ3JhY2lvc298ZW58MHx8MHx8fDA%3D'},
+    {nombre:'Carl Johnson',imagen:'https://ih1.redbubble.net/image.3104231837.8931/raf,360x360,075,t,fafafa:ca443f4786.jpg'},
     {nombre:'Shuerk',imagen:'https://pics.craiyon.com/2023-12-28/LXWQ-9gtRv-WsJPeJaPoYQ.webp'},
     {nombre:'Kung Fu Panda',imagen:'https://sm.ign.com/ign_es/cover/k/kung-fu-pa/kung-fu-panda-4_jysw.jpg'},
     {nombre:'Al-Bajad Mamad',imagen:'https://i.pinimg.com/236x/62/70/fd/6270fd9cfd5eca8e06420f2a3ec7149f.jpg'},

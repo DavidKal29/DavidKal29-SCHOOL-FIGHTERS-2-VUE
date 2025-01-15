@@ -2,17 +2,15 @@
   <section :style="{ backgroundImage: `url('${this.escenario.imagen}')` }" class="h-screen bg-cover">
     <router-link to="/"><button class="bg-[#194988] text-white rounded-[7px] py-[5px] px-[30px] m-[10px]">Inicio</button></router-link>
     <div class="flex justify-center items-center gap-[15px] h-[80vh]">
-      <div class="border-[2px solid] bg-blue-900 w-[50vh] h-[60vh] flex flex-col justify-between items-center p-[10px] rounded">
-        <img class="w-[35vh] h-[35vh] rounded-full border-orange-500 border-[5px]" :src="p1.imagen" :alt="p1.nombre">
-        <span class="text-orange-500 font-bold text-[20px]">{{ p1.nombre }}</span>
-      </div>
+      
+
+      <TarjetaPersonaje :imagen="p1.imagen" :nombre="p1.nombre"></TarjetaPersonaje>
       
       <img class="w-[20%]" src="https://cdn.pixabay.com/photo/2024/08/26/04/20/ai-generated-8998102_640.png" alt="">
 
-      <div class="border-[2px solid] bg-blue-900 w-[50vh] h-[60vh] flex flex-col justify-between items-center p-[10px] rounded">
-        <img class="w-[35vh] h-[35vh] rounded-full border-orange-500 border-[5px]" :src="p2.imagen" :alt="p2.nombre">
-        <span class="text-orange-500 font-bold text-[20px]">{{ p2.nombre }}</span>
-      </div>
+      <TarjetaPersonaje :imagen="p2.imagen" :nombre="p2.nombre"></TarjetaPersonaje>
+
+      
       
       
     </div>
@@ -20,7 +18,9 @@
 </template>
 
 <script>
+import TarjetaPersonaje from '@/components/TarjetaPersonaje.vue';
 export default {
+  components: { TarjetaPersonaje },
     name:'VistaCombate',
     data(){
         return{

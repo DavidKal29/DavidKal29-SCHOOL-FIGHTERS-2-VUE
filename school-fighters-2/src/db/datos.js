@@ -9,7 +9,6 @@ export let escenarios=[
 
 export let personajes=[
     {nombre:'Trollface',imagen:'https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/42WBY2CO2ZJ5DPS33M2GBK5UGQ.jpg'},
-    {nombre:'Mr Increible',imagen:'https://static.wikia.nocookie.net/the-uncanny-incredible/images/2/22/Uncanny_3.25.webp/revision/latest/scale-to-width-down/250?cb=20231204160008&path-prefix=es'},
     {nombre:'Oso',imagen:'https://plus.unsplash.com/premium_photo-1664303216226-46ed2b6f1c3b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b3NvJTIwZ3JhY2lvc298ZW58MHx8MHx8fDA%3D'},
     {nombre:'Cj',imagen:'https://ih1.redbubble.net/image.3104231837.8931/raf,360x360,075,t,fafafa:ca443f4786.jpg'},
     {nombre:'Shuerk',imagen:'https://pics.craiyon.com/2023-12-28/LXWQ-9gtRv-WsJPeJaPoYQ.webp'},
